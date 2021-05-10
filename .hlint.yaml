@@ -1,0 +1,2 @@
+- flags:
+    - { name: [-Wno-incomplete-patterns, -Wno-overlapping-patterns] }
