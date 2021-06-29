@@ -1,6 +1,6 @@
 module Cipher where
 
-import           Data.Char
+import           Data.Char                      ( ord )
 
 -- handle upper and lowercase, ?guard with elem and range?
 
