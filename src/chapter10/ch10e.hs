@@ -13,7 +13,7 @@ nouns :: [String]
 nouns = ["time", "way", "year", "work", "government"]
 
 verbs :: [String]
-verbs = ["be", "have", "do", "say", "get"]
+verbs = ["is", "has", "does", "says", "gets"]
 
 wordCombos :: [(String, String, String)]
 wordCombos = [ (x, y, z) | x <- nouns, y <- verbs, z <- nouns ]
@@ -50,6 +50,7 @@ squishMap :: (a -> [b]) -> [a] -> [b]
 squishMap f = foldr (\x acc -> f x ++ acc) []
 
 squish' :: [[a]] -> [a]
+squish' []       = []
 squish' (x : xs) = squishMap (x ++) xs
 
 myMaximumBy :: (a -> a -> Ordering) -> [a] -> a

@@ -1,5 +1,10 @@
 module Folds where
 
+{-
+foldl (flip (*)) 1 [1..3]
+(3*(2*(1*1)))
+-}
+
 f :: String
 f = foldr (++) "" ["woot", "WOOT", "woot"]
 

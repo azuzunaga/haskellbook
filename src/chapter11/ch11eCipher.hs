@@ -9,9 +9,9 @@ import           Data.Char                      ( chr
 overlay :: String -> String -> String
 overlay input encoder = go input encoder ""
  where
-  go [] _  acc = acc
-  go xs [] acc = go xs encoder acc
-  go (x : xs) (y : ys) acc | [x] == " " = go xs (y : ys) (acc ++ " ")
+  go []       _  acc = acc
+  go (x : xs) [] acc = go xs encoder (acc ++ [x])
+  go (x : xs) (y : ys) acc | [x] == " " = go xs ys (acc ++ " ")
                            | otherwise  = go xs ys (acc ++ [y])
 
 distance :: Char -> Int

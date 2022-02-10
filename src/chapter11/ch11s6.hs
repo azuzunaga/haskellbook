@@ -35,8 +35,11 @@ isPlane :: Vehicle -> Bool
 isPlane (Plane _ _) = True
 isPlane _           = False
 
-areCars :: [Vehicle] -> Bool
-areCars = foldr ((&&) . isCar) True
+areCars :: [Vehicle] -> [Bool]
+areCars = map isCar
+
+areAllCars :: [Vehicle] -> Bool
+areAllCars = foldr ((&&) . isCar) True
 
 getManu :: Vehicle -> Manufacturer
 getManu (Car m _) = m
