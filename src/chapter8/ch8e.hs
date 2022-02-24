@@ -42,8 +42,8 @@ recSum n = n + recSum (n - 1)
 recMult :: (Integral a) => a -> a -> a
 recMult x y = go x y 0
  where
-  go a b sum | b == 0    = sum
-             | otherwise = go a (b - 1) (sum + a)
+  go a b res | b == 0    = res
+             | otherwise = go a (b - 1) (res + a)
 
 data DividedResult = Result Integer | DividedByZero deriving Show
 

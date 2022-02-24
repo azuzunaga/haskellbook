@@ -38,8 +38,8 @@ fromMaybe _ (Just n) = n
 -- Prelude> listToMaybe []
 -- Nothing
 listToMaybe :: [a] -> Maybe a
-listToMaybe []       = Nothing
-listToMaybe (x : xs) = Just x
+listToMaybe []      = Nothing
+listToMaybe (x : _) = Just x
 
 -- Prelude> maybeToList (Just 1)
 -- [1]
