@@ -19,15 +19,6 @@ extra-source-files:
     README.md
     ChangeLog.md
 
--- library addition
---   exposed-modules: Addition
---   ghc-options: -Wall -fwarn-tabs
---   build-depends: base >= 4.7 && <5
---                  , hspec
---                  , QuickCheck
---   hs-source-dirs: src/chapter14
---   default-language: Haskell2010
-
 library
   exposed-modules: Morse
   build-depends: base >= 4.7 && <5
@@ -39,7 +30,7 @@ library
 
 executable morse
   main-is: Main.hs
-  ghc-options: -Wall -fwarn-tabs -main-is Main
+  ghc-options: -fwarn-tabs -main-is Main
   other-modules: Morse
   hs-source-dirs: src/chapter14/morse/src
   build-depends: base >=4.7 && <5
