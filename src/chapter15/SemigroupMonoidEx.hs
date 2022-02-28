@@ -218,6 +218,9 @@ instance Monoid a => Monoid (Mem s a) where
   mempty  = Mem $ \s -> (mempty, s)
   mappend = (<>)
 
+f'' :: Mem Integer [Char]
+f'' = Mem $ \s -> ("hi", s + 1)
+
 ------------------------------------------------
 type S = String
 
@@ -280,3 +283,12 @@ main = do
   print $ failure "woot" <> failure "blah" == Failure "wootblah"
   print $ success 1 <> success 2 == Success 1
   print $ failure "woot" <> success 2 == Success 2
+  print "12. Weird Monoid"
+  let rmzero  = runMem mempty 0
+      rmleft  = runMem (f'' <> mempty) 0
+      rmright = runMem (mempty <> f'') 0
+  print $ rmleft == ("hi", 1)
+  print $ rmright == ("hi", 1)
+  print $ (rmzero :: (String, Int)) == ("", 0)
+  print $ rmleft == runMem f'' 0
+  print $ rmright == runMem f'' 0
