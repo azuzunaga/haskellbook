@@ -1,8 +1,11 @@
 module ListApplicative where
 
-import           Test.QuickCheck
-import           Test.QuickCheck.Checkers
-import           Test.QuickCheck.Classes
+import           Test.QuickCheck                ( Arbitrary(arbitrary) )
+import           Test.QuickCheck.Checkers       ( EqProp(..)
+                                                , eq
+                                                , quickBatch
+                                                )
+import           Test.QuickCheck.Classes        ( applicative )
 
 data List a = Nil | Cons a (List a)
   deriving (Eq, Show)
