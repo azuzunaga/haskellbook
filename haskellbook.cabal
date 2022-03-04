@@ -25,6 +25,7 @@ library
                  , containers
                  , QuickCheck
                  , hspec
+                 , checkers
   hs-source-dirs: src/chapter14/morse/src
   default-language: Haskell2010
 
