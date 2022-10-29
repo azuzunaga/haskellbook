@@ -1,2 +1,16 @@
 cradle:
-  stack:
+  cabal:
+    - path: "src/"
+      component: "lib:haskellbook"
+
+    - path: "src/chapter14/morse/src/Main.hs"
+      component: "haskellbook:exe:morse"
+
+    - path: "src/chapter14/morse/src/Morse.hs"
+      component: "haskellbook:exe:morse"
+
+    - path: "src/chapter14/morse/tests"
+      component: "haskellbook:test:morse-tests"
+
+    - path: "test"
+      component: "haskellbook:test:haskellbook-test"
